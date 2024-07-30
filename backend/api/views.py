@@ -5,7 +5,7 @@ from .models import Entry
 from .forms import EntryForm
 from .serializers import EntrySerializer
 
-@login_required
+# @login_required
 def upload_form(request):
     if request.method == 'POST':
         form = EntryForm(request.POST, request.FILES)
