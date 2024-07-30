@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import EntryList
 
 urlpatterns = [
-    path('your-endpoint/', views.YourView.as_view(), name='your-endpoint'),
+    path('entries/', EntryList.as_view(), name='entry-list'),
 ]
