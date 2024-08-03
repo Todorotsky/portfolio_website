@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Entries() {
   const [entries, setEntries] = useState([]);
@@ -24,7 +25,7 @@ function Entries() {
               <div className="card mb-4 box-shadow">
                 <img
                   className="card-img-top"
-                  src={entry.featured_image}
+                  src={entry.featured_image_url}
                   alt=""
                 />
                 <div className="card-body">

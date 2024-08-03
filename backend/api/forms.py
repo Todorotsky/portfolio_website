@@ -4,4 +4,4 @@ from .models import Entry
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
-        fields = ['title', 'description', 'featured_image', 'link']
+        fields = ['title', 'description', 'featured_image_url', 'link']
