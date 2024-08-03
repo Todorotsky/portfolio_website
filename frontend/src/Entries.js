@@ -17,7 +17,7 @@ function Entries() {
   }, []);
 
   return (
-    <div className="album py-5 bg-light">
+    <div className="album py-5">
       <div className="container">
         <div className="row">
           {entries.map((entry) => (
