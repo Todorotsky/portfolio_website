@@ -22,11 +22,11 @@ function Entries() {
         <div className="row">
           {entries.map((entry) => (
             <div className="col-md-4" key={entry.id}>
-              <div className="card mb-4 box-shadow">
+              <div className="card mb-4 box-shadow h-100">
                 <img
                   className="card-img-top"
                   src={entry.featured_image_url}
-                  alt=""
+                  alt="Featured_Image"
                 />
                 <div className="card-body">
                   <h5>{entry.title}</h5>

@@ -1,5 +1,3 @@
-// src/pages/Home.js
-import React from "react";
 import Entries from "../Entries";
 
 const Home = () => {
@@ -23,7 +21,9 @@ const Home = () => {
             <h4>My Journey to Become a Developer</h4>
             <hr />
             <p>
-              Graduated December 2023, I started out as a Data Entry Clerk for
+              Graduated from the University of Nevada, Las Vegas in December
+              2023 with a BS in Computer Science.
+              <br /> <br />I started out as a Data Entry Clerk for
               BulkSupplements.com. The previous process was laborious. I had to
               change label images for hundreds of products. If there was a
               single calorie change, I would have to open Photoshop and change
@@ -86,6 +86,8 @@ const Home = () => {
               Initiated, designed and implemented software that nearly automated
               the company's label creation process, replacing the need for Adobe
               Photoshop.
+              <br /> <br />
+              Currently in the Lonely Octopus bootcamp to utilize AI.
             </p>
           </div>
         </div>
@@ -97,7 +99,7 @@ const Home = () => {
               <b>Languages:</b> Python, C++, C#, C, Java, Javascript, BASH,
               HTML/CSS
               <br />
-              <b>Frameworks:</b> React, Flask, Django, Next.js
+              <b>Frameworks:</b> React, Flask, Django, Next.js, Streamlit, Shiny
               <br />
               <b>Other:</b> SQL, REST, Figma, Selenium, Linux, Unity, Git
               <br />
@@ -106,6 +108,10 @@ const Home = () => {
             </p>
           </div>
         </div>
+      </div>
+      <br />
+      <div className="row">
+        <h1>Project Showcase</h1>
       </div>
       <Entries />
     </div>
