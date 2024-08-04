@@ -111,7 +111,7 @@ const Home = () => {
       </div>
       <br />
       <div className="row">
-        <h1>Project Showcase</h1>
+        <h1 className="text-center">Project Showcase</h1>
       </div>
       <Entries />
     </div>
