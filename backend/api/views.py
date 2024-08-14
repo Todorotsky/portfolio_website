@@ -3,9 +3,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from rest_framework import generics, viewsets
-from .models import Entry, BlogPost, Newsletter
+from .models import Entry, BlogPost, Newsletter, NewsletterSubscription
 from .forms import EntryForm, BlogPostForm
-from .serializers import EntrySerializer, BlogPostSerializer, NewsletterSerializer
+from .serializers import EntrySerializer, BlogPostSerializer, NewsletterSerializer, NewsletterSubscriptionSerializer
 from openai import OpenAI
 from django.conf import settings
 
@@ -57,6 +57,10 @@ class BlogPostDetailView(generics.RetrieveAPIView):
 class NewsletterViewSet(viewsets.ModelViewSet):
     queryset = Newsletter.objects.all().order_by('-created_at')
     serializer_class = NewsletterSerializer
+
+class NewsletterSubscribeView(generics.CreateAPIView):
+    queryset = NewsletterSubscription.objects.all()
+    serializer_class = NewsletterSubscriptionSerializer
 
 
 def is_admin(user):

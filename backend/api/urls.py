@@ -5,7 +5,7 @@ from .views import upload_form, EntryList, upload_blog_post, blog_post_list, Blo
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-from .views import BlogPostViewSet, NewsletterViewSet, newsletter_form, generate_newsletter
+from .views import BlogPostViewSet, NewsletterViewSet, newsletter_form, generate_newsletter, NewsletterSubscribeView
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
@@ -21,6 +21,8 @@ urlpatterns = [
     path('', include(router.urls)),  # Register router URLs
     path('newsletter/', newsletter_form, name='newsletter_form'),
     path('generate_newsletter/', generate_newsletter, name='generate_newsletter'),
+    path('newsletter/subscribe/', NewsletterSubscribeView.as_view(), name='newsletter_subscribe'),
+
 ]
 
 if settings.DEBUG:

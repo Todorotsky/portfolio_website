@@ -6,6 +6,8 @@ import BlogPost from "./pages/BlogPost"; // Import the BlogPost component for in
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Home from "./pages/Home";
+import Newsletter from "./pages/Newsletter";
+import NewsletterPosts from "./components/NewsletterPosts"; // Import NewsletterDetail
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -20,6 +22,10 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />{" "}
           {/* Route for individual blog posts */}
+          <Route path="/newsletter" element={<Newsletter />} />{" "}
+          {/* Route for newsletter landing page */}
+          <Route path="/newsletter/:id" element={<NewsletterPosts />} />{" "}
+          {/* Route for individual newsletters */}
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>

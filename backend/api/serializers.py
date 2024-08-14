@@ -1,7 +1,7 @@
 # backend/api/serializers.py
 
 from rest_framework import serializers
-from .models import Entry, BlogPost, Newsletter
+from .models import Entry, BlogPost, Newsletter, NewsletterSubscription
 
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,3 +29,8 @@ class NewsletterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Newsletter
         fields = '__all__'
+
+class NewsletterSubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NewsletterSubscription
+        fields = ['email']  # Adjust fields as needed
