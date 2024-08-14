@@ -1,11 +1,13 @@
 # backend/api/views.py
 
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from rest_framework import generics, viewsets
-from .models import Entry, BlogPost
+from .models import Entry, BlogPost, Newsletter
 from .forms import EntryForm, BlogPostForm
-from .serializers import EntrySerializer, BlogPostSerializer
+from .serializers import EntrySerializer, BlogPostSerializer, NewsletterSerializer
+from openai import OpenAI
+from django.conf import settings
 
 # View to handle the form submission for entries
 def upload_form(request):
@@ -51,3 +53,35 @@ class BlogPostViewSet(viewsets.ModelViewSet):
 class BlogPostDetailView(generics.RetrieveAPIView):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer
+
+class NewsletterViewSet(viewsets.ModelViewSet):
+    queryset = Newsletter.objects.all().order_by('-created_at')
+    serializer_class = NewsletterSerializer
+
+
+def is_admin(user):
+    return user.is_superuser
+
+@user_passes_test(is_admin)
+def newsletter_form(request):
+    return render(request, 'newsletter_form.html')
+
+@user_passes_test(is_admin)
+def generate_newsletter(request):
+    if request.method == 'POST':
+        topic = request.POST.get('topic')
+        api_key = settings.OPENAI_API_KEY
+        client = OpenAI(api_key=api_key)
+        messages = [
+            {"role": "system", "content": "You are a helpful assistant tasked with writing detailed newsletters."},
+            {"role": "user", "content": f"Please write a detailed newsletter about {topic}."}
+        ]
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=messages,
+            temperature=0,
+        )
+        content = response.choices[0].message.content
+        Newsletter.objects.create(topic=topic, content=content)
+        return render(request, 'generated_newsletter.html', {'topic': topic, 'content': content})
+    return redirect('newsletter_form')

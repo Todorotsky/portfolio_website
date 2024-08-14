@@ -26,3 +26,11 @@ class BlogPost(models.Model):
         return self.title
     def get_author_name(self):
         return self.author.get_full_name() or self.author.username
+    
+class Newsletter(models.Model):
+    topic = models.CharField(max_length=255)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.topic

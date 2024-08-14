@@ -1,7 +1,7 @@
 # backend/api/serializers.py
 
 from rest_framework import serializers
-from .models import Entry, BlogPost
+from .models import Entry, BlogPost, Newsletter
 
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,3 +24,8 @@ class BlogPostSerializer(serializers.ModelSerializer):
         return f'http://localhost:3000/blog/{obj.id}/'  # Adjust to match your frontend route
     def get_author_name(self, obj):
         return obj.get_author_name()
+    
+class NewsletterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Newsletter
+        fields = '__all__'
