@@ -1,0 +1,30 @@
+.blog-post-card {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: 1rem;
+  padding: 1rem; /* Adds padding inside the card */
+}
+
+.blog-post-title {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-subtitle {
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.author-link {
+  color: #007bff; /* Blue color */
+  font-weight: bold; /* Bold text */
+  text-decoration: none; /* Remove underline */
+}
+
+.author-link:hover {
+  text-decoration: underline; /* Underline on hover (optional) */
+}
+
+.blog-post-content {
+  padding: 1rem; /* Add padding inside the content section */
+}
