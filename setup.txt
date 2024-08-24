@@ -1,0 +1,11 @@
+sudo systemctl start docker
+
+heroku container:push web --app troygalicia-server
+heroku container:release web --app troygalicia-server
+
+heroku container:push web --app troygalicia
+heroku container:release web --app troygalicia
+
+or
+docker-compose build
+docker-compose up

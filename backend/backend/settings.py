@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from corsheaders.defaults import default_headers, default_methods
+
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,5 +143,27 @@ LOGIN_REDIRECT_URL = '/'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    # Add other origins as needed
+    'http://troygalicia.com',
+    'http://www.troygalicia.com',
+    'https://troygalicia.com',
+    'https://www.troygalicia.com',
+    'https://troygalicia-server-2315b02bc656.herokuapp.com',
 ]
+
+# Allow all headers to be sent from your frontend to your backend
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'content-type',
+]
+
+# Optionally, allow all methods
+CORS_ALLOW_METHODS = list(default_methods) + [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
+
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
