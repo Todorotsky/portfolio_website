@@ -10,7 +10,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/blogposts/${id}/`)
+      .get(`${process.env.REACT_APP_API_URL}/api/blogposts/${id}/`)
       .then((response) => {
         setPost(response.data);
       })

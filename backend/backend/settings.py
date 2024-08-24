@@ -25,9 +25,15 @@ SECRET_KEY = "django-insecure-0490i$%+n@rx7oic@_&&otjg4fi_-!+kg9i1zw4az=1pd9-d*(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+PORT = os.getenv('PORT', '8000')
 
+ALLOWED_HOSTS = ['troygalicia.com', 'www.troygalicia.com', 'troygalicia-server-2315b02bc656.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://troygalicia.com',
+    'https://www.troygalicia.com',
+    'https://troygalicia-server-2315b02bc656.herokuapp.com',
+]
 # Application definition
 
 INSTALLED_APPS = [

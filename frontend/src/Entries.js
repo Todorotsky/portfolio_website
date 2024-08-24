@@ -7,7 +7,7 @@ function Entries() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/entries/")
+      .get(`${process.env.REACT_APP_API_URL}/api/entries/`)
       .then((response) => {
         setEntries(response.data);
       })
