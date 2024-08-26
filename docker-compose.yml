@@ -6,7 +6,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3000:80" # React app will be available on port 3000
+      - "3000:3000" # React app will be available on port 3000 for local development
+    environment:
+      - PORT=3000 # Set PORT environment variable for the frontend
 
   backend:
     build:
@@ -15,6 +17,8 @@ services:
     volumes:
       - ./backend:/app # Map your backend folder to the app directory in the container
     ports:
-      - "8000:8000" # Django app will be available on port 8000
+      - "8000:8000" # Django app will be available on port 8000 for local development
+    environment:
+      - PORT=8000 # Set PORT environment variable for the backend
     depends_on:
       - frontend

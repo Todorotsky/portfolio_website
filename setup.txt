@@ -7,5 +7,5 @@ heroku container:push web --app troygalicia
 heroku container:release web --app troygalicia
 
 or
-docker-compose build
-docker-compose up
+sudo docker-compose build
+sudo docker-compose up
