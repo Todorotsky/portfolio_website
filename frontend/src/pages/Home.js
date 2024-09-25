@@ -8,7 +8,7 @@ const Home = () => {
           <div className="card card-body h-100" id="profile-wrapper">
             <img
               id="profile-pic"
-              src="https://media.discordapp.net/attachments/839723891613892619/1269120982937767947/profile_picture.jpeg?ex=66bb6ec5&is=66ba1d45&hm=166b9cfa1f3d4e4975055d7382fc7d1b31d085b7cdba1a7da19c339ed4e6bb0e&=&format=webp"
+              src="https://i.imgur.com/KbYtnmZ.jpeg"
               alt=""
             ></img>
             <hr />

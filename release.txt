@@ -1,0 +1,9 @@
+cd backend
+docker-compose build backend
+heroku container:push web --app troygalicia-server
+heroku container:release web --app troygalicia-server
+
+cd frontend
+docker-compose build frontend
+heroku container:push web --app troygalicia
+heroku container:release web --app troygalicia
