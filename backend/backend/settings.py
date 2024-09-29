@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0490i$%+n@rx7oic@_&&otjg4fi_-!+kg9i1zw4az=1pd9-d*("
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['troygalicia.com', 'troygalicia-server-2315b02bc656.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -135,5 +135,7 @@ LOGIN_REDIRECT_URL = '/'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    "https://www.troygalicia.com",
+    "https://troygalicia.com",
     # Add other origins as needed
 ]

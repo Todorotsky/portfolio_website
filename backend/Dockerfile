@@ -17,8 +17,8 @@ ENV DJANGO_SETTINGS_MODULE=backend.settings
 # Run Django collectstatic command (skip input)
 RUN python manage.py collectstatic --noinput
 
-# Expose port 8000
+# Expose the port (Heroku will still use the $PORT environment variable)
 EXPOSE 8000
 
-# Start the Django server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Start the Django server using the $PORT environment variable, default to 8000 if not set
+CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:${PORT:-8000}"]
