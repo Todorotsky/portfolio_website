@@ -23,13 +23,14 @@ const Home = () => {
             <p>
               Graduated from the University of Nevada, Las Vegas in December
               2023 with a BS in Computer Science.
-              <br /> <br />I started out as a Data Entry Clerk for
-              BulkSupplements.com. The previous process was laborious. I had to
-              change label images for hundreds of products. If there was a
-              single calorie change, I would have to open Photoshop and change
-              that number 5 times for each different size. I talked to my
-              manager to initiate a project to automate the process and finished
-              it in one month.
+              <br /> <br />
+              I’m a Software Engineer who is unafraid to take initiative and
+              exceed expectations. When I saw inefficiencies in a marketing
+              role, I proposed and built a full-stack application that
+              transformed workflows across the company, saving hours of manual
+              work. Known as a ”wizard” for delivering fast, effective
+              solutions, I lead by doing — whether building an AI search engine
+              for a business or driving a capstone project to 2nd place at UNLV.
             </p>
             <ul className="social-links">
               <li>
@@ -87,7 +88,9 @@ const Home = () => {
               the company's label creation process, replacing the need for Adobe
               Photoshop.
               <br /> <br />
-              Currently in the Lonely Octopus bootcamp to utilize AI.
+              Finished the Lonely Octopus bootcamp in August 2023 and
+              successfully delivered a RAG AI Search Engine proof of concept to
+              Lixcap, a financial advising firm.
             </p>
           </div>
         </div>
@@ -96,12 +99,16 @@ const Home = () => {
             <h4>What I Know</h4>
             <hr />
             <p>
-              <b>Languages:</b> Python, C++, C#, C, Java, Javascript, BASH,
-              HTML/CSS
+              <b>Languages:</b> Python, C/C++/C#, SQL, Java, JavaScript,
+              HTML/CSS, BASH
               <br />
-              <b>Frameworks:</b> React, Flask, Django, Next.js, Streamlit, Shiny
+              <b>Frameworks:</b> React, Node.js, Flask, Shiny, Streamlit,
+              Tailwind CSS
               <br />
-              <b>Other:</b> SQL, REST, Figma, Selenium, Linux, Unity, Git
+              <b>Developer Tools:</b> Git, Figma, Docker, VS Code, Jupyter
+              Notebook, OpenAI, IntelliJ, Eclipse, Unity
+              <br />
+              <b>Libraries:</b> pandas, NumPy, Selenium
               <br />
               <br />I also have experience with prompt engineering and creating
               and integrating AI products!

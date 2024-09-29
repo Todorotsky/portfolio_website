@@ -10,7 +10,11 @@ function Entries() {
     axios
       .get(`${config.apiUrl}/api/entries/`)
       .then((response) => {
-        setEntries(response.data);
+        // Sort the entries from latest to earliest by submit_date
+        const sortedEntries = response.data.sort(
+          (a, b) => new Date(b.submit_date) - new Date(a.submit_date)
+        );
+        setEntries(sortedEntries);
       })
       .catch((error) => {
         console.error("There was an error fetching the entries!", error);
