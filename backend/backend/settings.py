@@ -137,5 +137,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     "https://www.troygalicia.com",
     "https://troygalicia.com",
+    "http://www.troygalicia.com",
+    "http://troygalicia.com",
     # Add other origins as needed
 ]
