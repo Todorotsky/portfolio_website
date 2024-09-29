@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import config from "./config";
 
 function Entries() {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/entries/")
+      .get(`${config.apiUrl}/api/entries/`)
       .then((response) => {
         setEntries(response.data);
       })

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./BlogPost.css"; // Import your custom CSS file
+import config from "../config";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/blogposts/${id}/`)
+      .get(`${config.apiUrl}/api/blogposts/${id}/`)
       .then((response) => {
         setPost(response.data);
       })

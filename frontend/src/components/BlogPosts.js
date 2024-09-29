@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import config from "../config";
 
 const BlogPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/blogposts/")
+      .get(`${config.apiUrl}/api/blogposts/`)
       .then((response) => {
         setPosts(response.data);
       })
